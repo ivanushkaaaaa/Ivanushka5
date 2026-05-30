@@ -1,0 +1,185 @@
+
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            background: #0a2a40;
+            color: #e0e8f0;
+            line-height: 1.5;
+        }
+        .container { max-width:1200px; margin:0 auto; padding:0 24px; }
+        .header {
+            background: rgba(10, 42, 64, 0.96);
+            backdrop-filter: blur(6px);
+            padding: 14px 0;
+            border-bottom: 1px solid #1c4a6e;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #7cc4f8;
+            text-decoration: none;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .logo span { color: #a3dcff; }
+        .nav { display:flex; gap:8px; flex-wrap:wrap; }
+        .nav a {
+            text-decoration: none;
+            color: #7cc4f8;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 40px;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+            background: rgba(124, 196, 248, 0.08);
+        }
+        .nav a:hover { background:#7cc4f8; color:#0a2a40; }
+        section { padding:48px 0; border-bottom:1px solid rgba(124,196,248,0.2); }
+        h2 {
+            font-size:2rem;
+            font-weight:700;
+            margin-bottom:32px;
+            color:#a3dcff;
+            position:relative;
+            display:inline-block;
+        }
+        h2:after {
+            content:'';
+            position:absolute;
+            bottom:-12px;
+            left:0;
+            width:70px;
+            height:4px;
+            background:#7cc4f8;
+            border-radius:4px;
+        }
+        .about, .card, .edu-item, .review-card, .contacts-block, .school-emblem {
+            background: #0f3550;
+            border-radius: 32px;
+            padding: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        .about { display:flex; gap:48px; align-items:center; flex-wrap:wrap; }
+        .about-text { flex:2; }
+        .about-text p { margin-bottom:18px; font-size:1.05rem; color:#c8ddf0; }
+        .avatar-placeholder {
+            width:150px; height:150px;
+            background: linear-gradient(145deg, #0466a8, #0284c7);
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:3.5rem;
+            font-weight:600;
+            color:white;
+            box-shadow:0 12px 22px rgba(4,102,168,0.5);
+            flex-shrink:0;
+        }
+        .stats-row { display:flex; gap:20px; margin-top:28px; flex-wrap:wrap; }
+        .stat-item {
+            background: #1c4a6e;
+            padding: 10px 22px;
+            border-radius: 60px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: #c8ddf0;
+        }
+        .flex-row { display:flex; gap:30px; flex-wrap:wrap; }
+        .card { flex:1; }
+        .card h3 { color:#7cc4f8; margin-bottom:20px; font-size:1.5rem; }
+        .skills { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; }
+        .skills span {
+            background: #1c4a6e;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #a3dcff;
+            font-size: 0.9rem;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            margin-top: 20px;
+        }
+        .review-card { display:flex; flex-direction:column; }
+        .review-stars { color:#f5b042; font-size:1.2rem; margin-bottom:16px; letter-spacing:2px; }
+        .review-text {
+            font-size:0.98rem;
+            line-height:1.5;
+            color:#c8ddf0;
+            margin-bottom:20px;
+            flex:1;
+        }
+        .review-author {
+            font-weight: 700;
+            color: #a3dcff;
+            border-top: 1px solid #1c4a6e;
+            padding-top: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+        .contacts-block { display:flex; flex-wrap:wrap; gap:36px; }
+        .map { flex: 1.2; }
+        .map iframe {
+            width: 100%;
+            height: 260px;
+            border-radius: 24px;
+            border: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        footer {
+            text-align: center;
+            padding: 28px 20px;
+            font-size: 0.85rem;
+            color: #7aa4c7;
+            background: rgba(10, 42, 64, 0.8);
+            margin-top: 20px;
+            border-top: 1px solid #1c4a6e;
+        }
+        @media (max-width:750px) {
+            .container { padding: 0 18px; }
+            .header-inner { flex-direction:column; }
+            .about { flex-direction:column-reverse; text-align:center; }
+            h2:after { left:50%; transform:translateX(-50%); }
+            h2 { text-align:center; display:block; }
+            .stats-row { justify-content:center; }
+            .contacts-block { flex-direction:column; }
+        }
+        #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+#preloader.hide-preloader {
+    opacity: 0;
+    visibility: hidden;
+}
